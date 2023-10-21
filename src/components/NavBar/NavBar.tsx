@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import ComicVerseLogo from "../../assets/text.png"
 
 export const NavBar = () => {
     return (
@@ -8,15 +9,17 @@ export const NavBar = () => {
                     <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex-shrink-0">
                             <a href="#">
-                                <img className="block lg:hidden h-8 w-auto" src="../../../src/assets/text.png" alt="ComicVerse" />
-                                <img className="hidden lg:block h-8 w-auto" src="../../../src/assets/text.png" alt="ComicVerse" />
+                                <img className="block lg:hidden h-8 w-auto" src={ ComicVerseLogo } alt="ComicVerse" />
+                                <img className="hidden lg:block h-8 w-auto" src={ ComicVerseLogo } alt="ComicVerse" />
                             </a>
                         </div>
                         <div className="hidden sm:block sm:ml-6">
                             <div className="flex space-x-4">
                                 <a className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"><Link to={"/"}>Home</Link></a>
+                                <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><Link to={"/dashboard"}>Dashboard</Link></a>
                                 <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><Link to={"/about"}>About</Link></a>
                                 <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><Link to={"/login"}>Login</Link></a>
+                                <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><Link to={"/signup"}>Sign Up</Link></a>
                             </div>
                         </div>
                     </div>
@@ -27,6 +30,7 @@ export const NavBar = () => {
                     <a className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"><Link to={"/"}>Home</Link></a>
                     <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"><Link to={"/about"}>About</Link></a>
                     <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"><Link to={"/login"}>Login</Link></a>
+                    <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"><Link to={"/signup"}>Sign Up</Link></a>
                 </div>
             </div>
         </nav>
