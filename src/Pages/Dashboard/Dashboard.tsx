@@ -1,19 +1,15 @@
-import { CardComic } from "../../components/CardComic/CardComic"
+import { ComicContainer } from "../../components/ComicContainer/ComicContainer";
 import { NavBar } from "../../components/NavBar/NavBar"
 import { useDashboard } from "./State/useDashboard"
 
 export const Dashboard = () => {
-    useDashboard();
+    const { listComics } = useDashboard();
 
     return (
         <>
         <NavBar />
         <br></br>
-        <div className='flex wrap'>
-            <CardComic />
-            <CardComic />
-            <CardComic />
-        </div>
+        <ComicContainer listComics={listComics}/>
         </>
     )
 }

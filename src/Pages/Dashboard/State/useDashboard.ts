@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Comic } from "../Interfaces/Dashboard.interfaces";
 
 export const useDashboard = () => {
-    const [listComics, setListComics] = useState([]);
+    const [listComics, setListComics] = useState<Comic[]>([]);
+    //const [offset, setOffset] = useState(0);
 
     useEffect(() => {
         const getComics = async() => {
@@ -40,15 +42,16 @@ export const useDashboard = () => {
 
               setListComics(arrayPromises);
 
-            console.log(arrayPromises);
-
-            //console.log(comicsIDs);
-            //console.log(data);
+            //console.log(arrayPromises);
         };
 
         getComics();
 
     }, []);
+
+    // useEffect(() => {
+    //     const getMoreComics = async() => {
+
 
     return {
         listComics,
