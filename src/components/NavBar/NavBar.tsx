@@ -81,30 +81,7 @@ export const NavBar = () => {
                                 >
                                     About
                                 </Link>
-                                <Link 
-                                    to="/login" 
-                                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
-                                        isActivePath('/login') 
-                                            ? 'bg-gradient-to-r from-comic-electric-500 to-comic-electric-600 text-white shadow-lg' 
-                                            : 'text-gray-300 hover:bg-comic-electric-500/20 hover:text-white'
-                                    }`}
-                                    role="menuitem"
-                                    aria-current={isActivePath('/login') ? 'page' : undefined}
-                                >
-                                    Login
-                                </Link>
-                                <Link 
-                                    to="/signup" 
-                                    className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
-                                        isActivePath('/signup') 
-                                            ? 'bg-gradient-to-r from-comic-warning to-yellow-600 text-white shadow-lg' 
-                                            : 'bg-gradient-to-r from-comic-secondary to-blue-600 text-white hover:from-blue-600 hover:to-comic-secondary shadow-md hover:shadow-lg'
-                                    }`}
-                                    role="menuitem"
-                                    aria-current={isActivePath('/signup') ? 'page' : undefined}
-                                >
-                                    Sign Up
-                                </Link>
+
                             </div>
                         </div>
                     </div>
@@ -153,32 +130,7 @@ export const NavBar = () => {
                     >
                         About
                     </Link>
-                    <Link 
-                        to="/login" 
-                        className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
-                            isActivePath('/login') 
-                                ? 'bg-gradient-to-r from-comic-electric-500 to-comic-electric-600 text-white shadow-lg' 
-                                : 'text-gray-300 hover:bg-comic-electric-500/20 hover:text-white'
-                        }`}
-                        role="menuitem"
-                        aria-current={isActivePath('/login') ? 'page' : undefined}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                        Login
-                    </Link>
-                    <Link 
-                        to="/signup" 
-                        className={`block px-4 py-4 rounded-xl text-base font-medium transition-all duration-300 transform hover:scale-105 ${
-                            isActivePath('/signup') 
-                                ? 'bg-gradient-to-r from-comic-warning to-yellow-600 text-white shadow-lg' 
-                                : 'bg-gradient-to-r from-comic-secondary to-blue-600 text-white hover:from-blue-600 hover:to-comic-secondary shadow-md'
-                        }`}
-                        role="menuitem"
-                        aria-current={isActivePath('/signup') ? 'page' : undefined}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                        Sign Up
-                    </Link>
+
                 </div>
             </div>
         </nav>
