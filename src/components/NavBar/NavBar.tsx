@@ -13,14 +13,14 @@ export const NavBar = () => {
     };
 
     return (
-        <nav className="bg-gray-800 shadow-lg" aria-label="Main navigation">
+        <nav className="bg-gradient-to-r from-comic-dark via-gray-800 to-comic-dark shadow-2xl border-b border-comic-primary/20" aria-label="Main navigation">
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-                <div className="relative flex items-center justify-between h-16">
+                <div className="relative flex items-center justify-between h-18">
                     {/* Mobile menu button */}
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         <button
                             type="button"
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            className="inline-flex items-center justify-center p-2 rounded-xl text-gray-400 hover:text-white hover:bg-comic-primary/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-comic-primary transition-all duration-300"
                             aria-controls="mobile-menu"
                             aria-expanded={isMobileMenuOpen}
                             onClick={toggleMobileMenu}
@@ -32,25 +32,25 @@ export const NavBar = () => {
                         </button>
                     </div>
                     
-                    <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                    <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start py-2">
                         <div className="flex-shrink-0">
-                            <Link to="/" className="flex items-center">
+                            <Link to="/" className="flex items-center group">
                                 <img 
-                                    className="h-8 w-auto" 
+                                    className="h-10 w-auto transition-transform duration-300 group-hover:scale-110" 
                                     src={ComicVerseLogo} 
                                     alt="ComicVerse - Navigate to homepage" 
                                 />
                             </Link>
                         </div>
                         
-                        <div className="hidden sm:block sm:ml-6">
-                            <div className="flex space-x-4" role="menubar">
+                        <div className="hidden sm:block sm:ml-8">
+                            <div className="flex space-x-2" role="menubar">
                                 <Link 
                                     to="/" 
-                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                                         isActivePath('/') 
-                                            ? 'bg-gray-900 text-white' 
-                                            : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                            ? 'bg-gradient-to-r from-comic-primary to-comic-hero-600 text-white shadow-lg' 
+                                            : 'text-gray-300 hover:bg-comic-primary/20 hover:text-white'
                                     }`}
                                     role="menuitem"
                                     aria-current={isActivePath('/') ? 'page' : undefined}
@@ -59,10 +59,10 @@ export const NavBar = () => {
                                 </Link>
                                 <Link 
                                     to="/dashboard" 
-                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                                         isActivePath('/dashboard') 
-                                            ? 'bg-gray-900 text-white' 
-                                            : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                            ? 'bg-gradient-to-r from-comic-secondary to-blue-600 text-white shadow-lg' 
+                                            : 'text-gray-300 hover:bg-comic-secondary/20 hover:text-white'
                                     }`}
                                     role="menuitem"
                                     aria-current={isActivePath('/dashboard') ? 'page' : undefined}
@@ -71,10 +71,10 @@ export const NavBar = () => {
                                 </Link>
                                 <Link 
                                     to="/about" 
-                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                                         isActivePath('/about') 
-                                            ? 'bg-gray-900 text-white' 
-                                            : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                            ? 'bg-gradient-to-r from-comic-accent to-comic-cosmic-600 text-white shadow-lg' 
+                                            : 'text-gray-300 hover:bg-comic-accent/20 hover:text-white'
                                     }`}
                                     role="menuitem"
                                     aria-current={isActivePath('/about') ? 'page' : undefined}
@@ -83,10 +83,10 @@ export const NavBar = () => {
                                 </Link>
                                 <Link 
                                     to="/login" 
-                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                                         isActivePath('/login') 
-                                            ? 'bg-gray-900 text-white' 
-                                            : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                            ? 'bg-gradient-to-r from-comic-electric-500 to-comic-electric-600 text-white shadow-lg' 
+                                            : 'text-gray-300 hover:bg-comic-electric-500/20 hover:text-white'
                                     }`}
                                     role="menuitem"
                                     aria-current={isActivePath('/login') ? 'page' : undefined}
@@ -95,10 +95,10 @@ export const NavBar = () => {
                                 </Link>
                                 <Link 
                                     to="/signup" 
-                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                                    className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
                                         isActivePath('/signup') 
-                                            ? 'bg-blue-600 text-white' 
-                                            : 'bg-blue-500 text-white hover:bg-blue-600'
+                                            ? 'bg-gradient-to-r from-comic-warning to-yellow-600 text-white shadow-lg' 
+                                            : 'bg-gradient-to-r from-comic-secondary to-blue-600 text-white hover:from-blue-600 hover:to-comic-secondary shadow-md hover:shadow-lg'
                                     }`}
                                     role="menuitem"
                                     aria-current={isActivePath('/signup') ? 'page' : undefined}
@@ -113,13 +113,13 @@ export const NavBar = () => {
             
             {/* Mobile menu */}
             <div className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
-                <div className="px-2 pt-2 pb-3 space-y-1" role="menu">
+                <div className="px-4 pt-4 pb-6 space-y-3 bg-gradient-to-b from-comic-dark to-gray-900 border-t border-comic-primary/20" role="menu">
                     <Link 
                         to="/" 
-                        className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                        className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                             isActivePath('/') 
-                                ? 'bg-gray-900 text-white' 
-                                : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                ? 'bg-gradient-to-r from-comic-primary to-comic-hero-600 text-white shadow-lg' 
+                                : 'text-gray-300 hover:bg-comic-primary/20 hover:text-white'
                         }`}
                         role="menuitem"
                         aria-current={isActivePath('/') ? 'page' : undefined}
@@ -129,10 +129,10 @@ export const NavBar = () => {
                     </Link>
                     <Link 
                         to="/dashboard" 
-                        className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                        className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                             isActivePath('/dashboard') 
-                                ? 'bg-gray-900 text-white' 
-                                : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                ? 'bg-gradient-to-r from-comic-secondary to-blue-600 text-white shadow-lg' 
+                                : 'text-gray-300 hover:bg-comic-secondary/20 hover:text-white'
                         }`}
                         role="menuitem"
                         aria-current={isActivePath('/dashboard') ? 'page' : undefined}
@@ -142,10 +142,10 @@ export const NavBar = () => {
                     </Link>
                     <Link 
                         to="/about" 
-                        className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                        className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                             isActivePath('/about') 
-                                ? 'bg-gray-900 text-white' 
-                                : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                ? 'bg-gradient-to-r from-comic-accent to-comic-cosmic-600 text-white shadow-lg' 
+                                : 'text-gray-300 hover:bg-comic-accent/20 hover:text-white'
                         }`}
                         role="menuitem"
                         aria-current={isActivePath('/about') ? 'page' : undefined}
@@ -155,10 +155,10 @@ export const NavBar = () => {
                     </Link>
                     <Link 
                         to="/login" 
-                        className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                        className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                             isActivePath('/login') 
-                                ? 'bg-gray-900 text-white' 
-                                : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                ? 'bg-gradient-to-r from-comic-electric-500 to-comic-electric-600 text-white shadow-lg' 
+                                : 'text-gray-300 hover:bg-comic-electric-500/20 hover:text-white'
                         }`}
                         role="menuitem"
                         aria-current={isActivePath('/login') ? 'page' : undefined}
@@ -168,10 +168,10 @@ export const NavBar = () => {
                     </Link>
                     <Link 
                         to="/signup" 
-                        className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                        className={`block px-4 py-4 rounded-xl text-base font-medium transition-all duration-300 transform hover:scale-105 ${
                             isActivePath('/signup') 
-                                ? 'bg-blue-600 text-white' 
-                                : 'bg-blue-500 text-white hover:bg-blue-600'
+                                ? 'bg-gradient-to-r from-comic-warning to-yellow-600 text-white shadow-lg' 
+                                : 'bg-gradient-to-r from-comic-secondary to-blue-600 text-white hover:from-blue-600 hover:to-comic-secondary shadow-md'
                         }`}
                         role="menuitem"
                         aria-current={isActivePath('/signup') ? 'page' : undefined}
