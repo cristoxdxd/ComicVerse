@@ -35,9 +35,9 @@ export interface Root {
     resourceURI: string
     urls: Url[]
     series: Series
-    variants: any[]
+    variants: unknown[]
     collections: Collection[]
-    collectedIssues: any[]
+    collectedIssues: unknown[]
     dates: Date[]
     prices: Price[]
     thumbnail: Thumbnail
@@ -131,7 +131,7 @@ export interface Root {
   export interface Events {
     available: number
     collectionURI: string
-    items: any[]
+    items: unknown[]
     returned: number
   }
   
