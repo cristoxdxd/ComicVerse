@@ -6,6 +6,7 @@ import { NotFound } from './Pages/404/NotFound.tsx'
 import { About } from './Pages/About/About.tsx'
 import { Home } from './Pages/Home/Home.tsx'
 import { Dashboard } from './Pages/Dashboard/Dashboard.tsx'
+import { ComicDetail } from './Pages/ComicDetail/ComicDetail.tsx'
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <Dashboard />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/comic/:title',
+    element: <ComicDetail />,
     errorElement: <NotFound />,
   },
   {

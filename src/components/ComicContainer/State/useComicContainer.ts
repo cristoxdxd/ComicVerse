@@ -5,13 +5,13 @@ export const useComicContainer = (listComics: Comic[]) => {
     const [comicList, setComicsList] = useState<Comic[]>(listComics);
     const [filter, setFilter] = useState<string>("");
 
-    const filterComics = (search: string) => {
+    const filterComics = (search: string, comics: Comic[]) => {
         if (!search) {
-            return comicList;
+            return comics;
         }
-        return comicList.filter((comic) => {
+        return comics.filter((comic) => {
             const titleMatch = comic.title.toLowerCase().includes(search.toLowerCase());
-            const charactersMatch = comic.characters && comic.characters.items[0].name.toLowerCase().includes(search.toLowerCase());
+            const charactersMatch = comic.characters && comic.characters.items[0]?.name.toLowerCase().includes(search.toLowerCase());
             const creatorsMatch = comic.creators && comic.creators.items && comic.creators.items[0] && comic.creators.items[0].name.toLowerCase().includes(search.toLowerCase());
             return titleMatch || charactersMatch || creatorsMatch;
         });
@@ -19,10 +19,12 @@ export const useComicContainer = (listComics: Comic[]) => {
 
     useEffect(() => {
         if(filter) {
-            const filteredList = filterComics(filter);
-            setComicsList(filteredList || listComics)
+            const filteredList = filterComics(filter, listComics);
+            setComicsList(filteredList)
+        } else {
+            setComicsList(listComics);
         }        
-    }, [filter]);
+    }, [filter, listComics]);
 
     useEffect(() => {
         setComicsList(listComics);
